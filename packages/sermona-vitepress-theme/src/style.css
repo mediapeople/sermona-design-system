@@ -135,14 +135,33 @@
 }
 
 @media (max-width: 767px) {
+  /* VitePress default is 32px 24px — stack with .vp-doc padding and demo wells, interior reads too narrow */
+  .sermona-doc-shell .VPDoc {
+    padding-top: 24px;
+    padding-bottom: max(4rem, calc(3rem + env(safe-area-inset-bottom)));
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+
   .vp-doc {
-    padding-left: max(calc(1rem + 0.65em), env(safe-area-inset-left));
-    padding-right: max(1rem, env(safe-area-inset-right));
+    --vp-doc-pad-left: max(calc(0.875rem + 0.5em), env(safe-area-inset-left));
+    --vp-doc-pad-right: max(0.875rem, env(safe-area-inset-right));
+    padding-left: var(--vp-doc-pad-left);
+    padding-right: var(--vp-doc-pad-right);
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
     word-break: break-word;
     overflow-wrap: anywhere;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  /* Pattern demos: inline padding often uses --space-5; loosen on small screens */
+  .vp-doc .sermona-root.sermona-layout {
+    padding: var(--sermona-space-4) var(--sermona-space-3) !important;
+  }
+
+  .vp-doc .sermona-blog-card__body {
+    padding-inline: var(--sermona-space-3);
   }
 
   .VPNav {
@@ -166,10 +185,10 @@
   }
 
   .vp-doc .vp-table-scroll {
-    margin-left: calc(-1 * max(calc(1rem + 0.65em), env(safe-area-inset-left)));
-    margin-right: calc(-1 * max(1rem, env(safe-area-inset-right)));
-    padding-left: max(calc(1rem + 0.65em), env(safe-area-inset-left));
-    padding-right: max(1rem, env(safe-area-inset-right));
+    margin-left: calc(-1 * var(--vp-doc-pad-left));
+    margin-right: calc(-1 * var(--vp-doc-pad-right));
+    padding-left: var(--vp-doc-pad-left);
+    padding-right: var(--vp-doc-pad-right);
     padding-bottom: var(--sermona-space-2);
   }
 
