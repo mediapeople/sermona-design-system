@@ -116,12 +116,27 @@
 .vp-doc {
   font-family: var(--sermona-font-family-sans);
   max-width: 100%;
-  overflow-x: clip;
+  /*
+   * Heading permalinks sit at margin-inline-start: -0.87em; overflow-x: clip
+   * shears the “#”. Wide prose is contained via tables/code overflow rules.
+   */
+  overflow-x: visible;
+}
+
+/* VitePress heading permalink: keep “#” inside a comfortable line box (VP defaults can clip tall glyphs). */
+.vp-doc .header-anchor {
+  line-height: 1;
+  padding-block: 0.08em;
+}
+
+.vp-doc .header-anchor::before {
+  display: inline-block;
+  line-height: 1;
 }
 
 @media (max-width: 767px) {
   .vp-doc {
-    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-left: max(calc(1rem + 0.65em), env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
     word-break: break-word;
