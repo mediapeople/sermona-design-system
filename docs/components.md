@@ -11,7 +11,12 @@ Import after tokens:
 
 ## Editorial layout (dark)
 
-**Dual-line display:** **`.sermona-editorial-stack`** layers two **`.sermona-editorial-stack__layer`** spans — **`--back`** (low-contrast, offset) and **`--front`** (solid primary). Wrap repeats in **`.sermona-editorial-grid`** + **`.sermona-editorial-cell`** (bordered tile, centered body + **`.sermona-link`**).
+Two different patterns on this page:
+
+1. **Shadow stack (below):** **`.sermona-editorial-stack`** intentionally puts **two different words** in the same spot — the **back** layer uses **`--sermona-color-text-subtle`** (muted) and a small offset; the **front** layer is the solid primary title. It is supposed to read as a deliberate echo, not a rendering bug.
+2. **Full band further down:** a single **`.sermona-display-hero`** with a `<br />` is **one headline, two lines** — same color on both lines (normal stacked display type).
+
+**Dual-line display:** layer **`.sermona-editorial-stack__layer--back`** then **`--front`** (order in DOM does not change paint order; z-index does). Wrap repeats in **`.sermona-editorial-grid`** + **`.sermona-editorial-cell`** (bordered tile, centered body + **`.sermona-link`**).
 
 <div class="sermona-root sermona-layout" style="margin: 2rem 0;">
 <div class="sermona-editorial-grid">
@@ -41,7 +46,9 @@ Import after tokens:
 
 ### Full editorial band
 
-Stack **`.sermona-display-hero`**, meta, **`.sermona-card`**, and **`.sermona-quote`** in one bordered section when you need a single long-form preview (kitchen sink).
+Single **`.sermona-display-hero`** block (two lines, **same** color) — unlike the **shadow stack** above where back/front are **different words** and **different** colors.
+
+Stack **`.sermona-display-hero`**, meta, **`.sermona-card`**, and **`.sermona-quote`** in one bordered section when you need a long-form preview (kitchen sink).
 
 <div class="sermona-root sermona-layout sermona-stack sermona-stack--loose" style="margin: 2rem 0; border: 1px solid var(--sermona-color-border-subtle); border-radius: var(--sermona-radius-sm);">
 

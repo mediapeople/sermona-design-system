@@ -165,7 +165,7 @@ const components = `/**
   word-break: normal;
 }
 
-/* Dual-line editorial headline: ghost layer + solid layer (centered “double exposure”) */
+/* Dual-line editorial headline: ghost layer (muted) + solid title — same grid cell, slight offset */
 .sermona-editorial-stack {
   display: grid;
   place-items: center;
@@ -174,7 +174,8 @@ const components = `/**
   isolation: isolate;
   margin: 0 auto;
   max-width: 100%;
-  padding-block: var(--sermona-space-2);
+  padding-block: var(--sermona-space-4);
+  min-height: 3.25em;
 }
 
 .sermona-editorial-stack__layer {
@@ -194,13 +195,13 @@ const components = `/**
 }
 
 .sermona-editorial-stack__layer--back {
-  transform: translate(-0.06em, 0.15em);
-  color: rgba(255, 255, 255, 0.22);
+  transform: translate(-0.05em, 0.08em);
+  color: var(--sermona-color-text-subtle);
   z-index: 0;
 }
 
 .sermona-editorial-stack__layer--front {
-  transform: translate(0.05em, -0.1em);
+  transform: translate(0.04em, -0.06em);
   color: var(--sermona-color-text-primary);
   z-index: 1;
 }
