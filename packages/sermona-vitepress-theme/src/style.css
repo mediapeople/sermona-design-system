@@ -123,15 +123,6 @@
   overflow-x: visible;
 }
 
-/*
- * Markdown `<p>` has no class; Sermona patterns use `<p class="sermona-…">`.
- * A bare `.vp-doc p { line-height }` beats single-class primitives (0,1,1 vs 0,1,0)
- * and broke display heroes that are marked up as paragraphs.
- */
-.vp-doc p:not([class]) {
-  line-height: 28px;
-}
-
 /* VitePress heading permalink: keep “#” inside a comfortable line box (VP defaults can clip tall glyphs). */
 .vp-doc .header-anchor {
   line-height: 1;
