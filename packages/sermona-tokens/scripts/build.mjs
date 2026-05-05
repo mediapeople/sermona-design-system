@@ -234,7 +234,7 @@ const components = `/**
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(1.75rem, 5vw, var(--sermona-font-size-h2));
-  line-height: var(--sermona-line-height-snug);
+  line-height: var(--sermona-line-height-heading-snug);
   text-transform: capitalize;
   margin: 0;
 }
@@ -243,7 +243,7 @@ const components = `/**
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(1.25rem, 4.5vw, var(--sermona-font-size-h3));
-  line-height: 1.4;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
 }
 
@@ -300,6 +300,10 @@ const components = `/**
   flex-direction: column;
   gap: var(--sermona-space-3);
   align-items: stretch;
+}
+
+.sermona-card--stack > .sermona-meta + :is(.sermona-h2, .sermona-h3, h2, h3) {
+  margin-top: var(--sermona-space-2);
 }
 
 .sermona-card__footer {
@@ -383,7 +387,7 @@ const sectionPatterns = `
 .sermona-section__header {
   display: flex;
   flex-direction: column;
-  gap: var(--sermona-space-2);
+  gap: var(--sermona-space-3);
   max-width: var(--sermona-layout-max-content);
   margin-bottom: var(--sermona-space-4);
 }
@@ -418,6 +422,11 @@ const sectionPatterns = `
   )
 ) {
   margin-bottom: var(--sermona-space-3);
+}
+
+/* Section intros: parent gap handles kicker → title; keep a single rhythm step */
+.sermona-section__header > .sermona-kicker:has(+ :is(.sermona-h2, .sermona-h3, h2, h3)) {
+  margin-bottom: 0;
 }
 
 .sermona-lede {
@@ -588,7 +597,7 @@ const sectionPatterns = `
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-h3);
-  line-height: 1.35;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
 }
 
@@ -1062,7 +1071,7 @@ a.sermona-product-card:focus-visible {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-h3);
-  line-height: 1.35;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
   padding-right: var(--sermona-space-2);
 }
@@ -1250,7 +1259,7 @@ a.sermona-product-card:focus-visible {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(1.75rem, 5vw, var(--sermona-font-size-h2));
-  line-height: var(--sermona-line-height-snug);
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0 0 var(--sermona-space-3);
   color: var(--sermona-color-text-primary);
   text-transform: capitalize;
@@ -1468,7 +1477,7 @@ a.sermona-post-nav__link:focus-visible {
   font-size: var(--sermona-font-size-body);
   margin: 0;
   color: var(--sermona-color-text-primary);
-  line-height: var(--sermona-line-height-snug);
+  line-height: var(--sermona-line-height-heading-snug);
 }
 
 .sermona-blog-card {
@@ -1536,7 +1545,7 @@ a.sermona-blog-card:focus-visible {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-body);
-  line-height: var(--sermona-line-height-snug);
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
   color: var(--sermona-color-text-primary);
 }
@@ -1708,7 +1717,7 @@ a.sermona-post-nav__link:hover {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-h3);
-  line-height: 1.2;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
   color: var(--sermona-color-text-primary);
   letter-spacing: -0.02em;
@@ -1771,7 +1780,7 @@ a.sermona-post-nav__link:hover {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-h3);
-  line-height: 1.2;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0 0 var(--sermona-space-2);
   color: var(--sermona-color-text-primary);
   font-variant-numeric: tabular-nums;
@@ -1898,7 +1907,7 @@ a.sermona-post-nav__link:hover {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-h3);
-  line-height: 1.2;
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0;
   color: var(--sermona-color-text-primary);
   letter-spacing: -0.02em;
@@ -2495,6 +2504,7 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-body);
+  line-height: var(--sermona-line-height-heading-snug);
   margin: 0 0 var(--sermona-space-2);
   color: var(--sermona-color-text-primary);
 }
@@ -3017,7 +3027,7 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   padding: var(--sermona-space-3) var(--sermona-space-4);
   font-weight: var(--sermona-font-weight-bold);
   font-size: var(--sermona-font-size-body);
-  line-height: var(--sermona-line-height-snug);
+  line-height: var(--sermona-line-height-heading-snug);
   color: var(--sermona-color-text-primary);
   border-bottom: 1px solid var(--sermona-color-border-subtle);
 }

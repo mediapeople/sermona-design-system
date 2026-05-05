@@ -54,8 +54,9 @@ Host the default font files under your product license. Fallbacks are grotesk sy
 | Section H2 (42px) | `.sermona-h2` |
 | Block H3 (32px) | `.sermona-h3` |
 | Body 16 | `.sermona-body` |
-| Meta / caption | `.sermona-meta`, hints, prose tables | `font.size.caption` (13px), `.sermona-meta` |
-| UI meta | Uppercase kickers, small UI | `font.size.meta` (14px), e.g. `.sermona-kicker` |
+| Meta / caption (13px) | `.sermona-meta`, hints, prose table cells |
+| UI meta (14px) | Uppercase kickers, dense UI (e.g. `.sermona-kicker`) |
+| Heading stack (line-height) | `.sermona-h2`, `.sermona-h3` → `--sermona-line-height-heading-snug` |
 
 See `tokens.json` for the full scale (`font.size.*`, `font.lineHeight.*`).
 

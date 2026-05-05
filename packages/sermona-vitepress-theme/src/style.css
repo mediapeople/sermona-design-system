@@ -419,9 +419,9 @@
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(2rem, 3.8vw + 0.75rem, 3.35rem);
-  line-height: 1.08;
+  line-height: 1.04;
   letter-spacing: -0.03em;
-  margin: 0 0 var(--sermona-space-4);
+  margin: 0 0 var(--sermona-space-5);
   color: var(--sermona-color-text-primary);
   text-transform: none;
   word-break: normal;
@@ -477,7 +477,7 @@
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(2.125rem, 4.5vw + 0.85rem, 3.625rem);
-  line-height: 1.07;
+  line-height: 1.04;
   color: var(--sermona-color-text-primary);
   margin: 0;
   letter-spacing: -0.028em;
@@ -485,7 +485,7 @@
 }
 
 .sermona-marketing__lede {
-  margin-top: var(--sermona-space-4);
+  margin-top: var(--sermona-space-5);
   max-width: min(42rem, 100%);
   color: rgba(255, 255, 255, 0.72);
   font-size: clamp(1.03rem, 0.9vw + 0.92rem, 1.175rem);
@@ -497,7 +497,7 @@
   letter-spacing: -0.02em;
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(1.05rem, 0.55vw + 0.98rem, 1.3125rem);
-  line-height: 1.28;
+  line-height: 1.18;
   color: var(--sermona-color-text-primary);
 }
 
@@ -614,7 +614,7 @@
 @media (max-width: 639px) {
   .sermona-marketing__title {
     font-size: clamp(1.85rem, 5.25vw + 0.85rem, 2.85rem);
-    line-height: 1.09;
+    line-height: 1.05;
     max-width: none;
   }
 
