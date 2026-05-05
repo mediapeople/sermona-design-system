@@ -170,6 +170,11 @@ export default defineSermonaDocsConfig(
       returnToTopLabel: "Back to top",
       skipToContentLabel: "Skip to main content",
       externalLinkIcon: true,
+      /* VPNavBarExtra (⋯) is shown 768–1279px when site.appearance is set; with force-dark
+       * the theme hides locale/appearance inside that flyout, so socialLinks keep it from rendering empty. */
+      socialLinks: [
+        { icon: "github", link: "https://github.com/mediapeople/sermona-design-system" },
+      ],
       nav: [
         { text: "Home", link: "/" },
         {
