@@ -374,21 +374,43 @@
   color: var(--sermona-color-text-muted);
 }
 
+/* Embedded Sermona layout bands: token default is space-9 padding — too wide for the doc rail */
+.vp-doc .sermona-layout {
+  padding-block: var(--sermona-space-6);
+  padding-inline: var(--sermona-space-2);
+}
+
+@media (min-width: 640px) {
+  .vp-doc .sermona-layout {
+    padding-inline: var(--sermona-space-4);
+  }
+}
+
 /**
  * Handbook: “Good digital design” — editorial split (no `.sermona-hero-split` / display-light quirks).
  */
 .vp-doc .sermona-good-hero-wrap {
-  padding-inline: var(--sermona-space-5);
+  padding-inline: var(--sermona-space-2);
   max-width: var(--sermona-layout-max-full);
   margin: 0 auto;
 }
 
+@media (min-width: 640px) {
+  .vp-doc .sermona-good-hero-wrap {
+    padding-inline: var(--sermona-space-4);
+  }
+}
+
 .vp-doc .sermona-good-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: start;
   padding-block: var(--sermona-space-5);
+}
+
+.vp-doc .sermona-good-hero__main {
+  min-width: 0;
 }
 
 .vp-doc .sermona-good-hero__title {
@@ -416,8 +438,9 @@
   background: var(--sermona-color-bg-card);
   border: 1px solid var(--sermona-color-border-subtle);
   border-radius: var(--sermona-radius-sm);
-  padding: var(--sermona-space-5) var(--sermona-space-6);
+  padding: var(--sermona-space-4);
   margin: 0;
+  min-width: 0;
 }
 
 .vp-doc .sermona-good-hero__lead {
@@ -425,9 +448,12 @@
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--sermona-color-text-muted);
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .vp-doc .sermona-good-hero {
     grid-template-columns: 1fr;
     gap: var(--sermona-space-5);
