@@ -144,12 +144,13 @@ const components = `/**
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-light);
   font-size: clamp(2.75rem, 12vw, var(--sermona-font-size-display-ultraman));
-  line-height: 1.04;
+  line-height: 1.06;
   text-transform: capitalize;
   color: var(--sermona-color-text-primary);
   margin: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  /* Avoid overflow-wrap:anywhere in grid columns — reads as broken display type */
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .sermona-display-hero {
@@ -160,8 +161,8 @@ const components = `/**
   text-transform: capitalize;
   color: var(--sermona-color-text-primary);
   margin: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .sermona-h2 {
@@ -3015,8 +3016,8 @@ input.sermona-input[type="file"]::file-selector-button:hover {
 .sermona-hero-split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--sermona-layout-gap-cols);
-  align-items: end;
+  gap: clamp(1.5rem, 3.5vw, var(--sermona-layout-gap-cols));
+  align-items: start;
 }
 .sermona-hero-split__aside {
   border-left: 1px solid var(--sermona-color-border-hairline);

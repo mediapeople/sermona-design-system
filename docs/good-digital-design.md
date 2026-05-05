@@ -4,17 +4,18 @@ description: How clarity, rhythm, systems, and care show up in interfaces — in
 outline: false
 ---
 
-<div class="sermona-root sermona-layout sermona-layout--full">
+<div class="sermona-root sermona-layout sermona-layout--full sermona-good-design">
 
-<section class="sermona-section sermona-section--tight" style="padding-inline: var(--sermona-space-5); max-width: var(--sermona-layout-max-full); margin: 0 auto;">
+<section class="sermona-section sermona-section--tight sermona-good-hero-wrap">
 
-<div class="sermona-hero-split">
-<div>
-<p class="sermona-kicker">Dynamics · Not decoration</p>
-<h1 class="sermona-display-light" style="font-size: clamp(2.25rem, 6vw, var(--sermona-font-size-display-megaman)); margin: 0;">Good digital<br/>design moves</h1>
+<div class="sermona-good-hero">
+<div class="sermona-good-hero__main">
+<p class="sermona-kicker">Dynamics, not decoration</p>
+<h1 class="sermona-good-hero__title" id="good-design-heading">Good digital design moves</h1>
+<p class="sermona-good-hero__deck">When <strong>type, space, color, and motion</strong> agree on one story, the interface earns trust fast — and keeps it under stress.</p>
 </div>
-<aside class="sermona-hero-split__aside">
-<p class="sermona-lede" style="max-width: none;">Interfaces succeed when <strong>type, space, color, and motion</strong> agree on a single story. The “dynamics” are the relationships between those choices: what leads, what recedes, and what answers the user back.</p>
+<aside class="sermona-good-hero__aside" aria-labelledby="good-design-heading">
+<p class="sermona-good-hero__lead">The <em>dynamics</em> are the relationships between those choices: what leads, what recedes, what answers the user back, and what stays visually quiet so decisions read as considered — not noisy.</p>
 </aside>
 </div>
 
