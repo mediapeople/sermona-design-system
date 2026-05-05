@@ -123,6 +123,11 @@
   overflow-x: visible;
 }
 
+/* Default Markdown paragraphs: ~1.75 at 16px body — component `p.sermona-*` overrides via class. */
+.vp-doc p {
+  line-height: 28px;
+}
+
 /* VitePress heading permalink: keep “#” inside a comfortable line box (VP defaults can clip tall glyphs). */
 .vp-doc .header-anchor {
   line-height: 1;
