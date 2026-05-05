@@ -176,15 +176,6 @@
   .vp-doc table {
     font-size: clamp(0.875rem, 0.25vw + 0.82rem, var(--sermona-font-size-meta));
     line-height: 1.45;
-    min-width: 0;
-  }
-
-  .vp-doc th,
-  .vp-doc td {
-    word-break: break-word;
-    hyphens: auto;
-    padding: var(--sermona-space-2) var(--sermona-space-3);
-    vertical-align: top;
   }
 }
 
@@ -280,6 +271,8 @@
   margin: var(--sermona-space-4) 0;
   border-radius: var(--sermona-radius-sm);
   scrollbar-color: color-mix(in srgb, var(--sermona-color-border-meta) 85%, transparent) transparent;
+  /* Mobile `.vp-doc` sets overflow-wrap:anywhere — isolate tables so words don't shatter mid-token */
+  overflow-wrap: normal;
 }
 
 .vp-doc .vp-table-scroll:focus-visible {
@@ -289,6 +282,8 @@
 
 .vp-doc .vp-table-scroll table {
   margin: 0;
+  /* Let columns size to content; grow past viewport → horizontal scroll instead of 1-letter wraps */
+  width: max-content;
   min-width: 100%;
 }
 
@@ -329,6 +324,10 @@
 .vp-doc td {
   border-color: var(--sermona-color-border-subtle);
   padding: var(--sermona-space-2) var(--sermona-space-3);
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+  vertical-align: top;
 }
 
 .vp-doc th {
