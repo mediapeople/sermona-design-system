@@ -124,19 +124,50 @@
 }
 
 /**
- * VitePress default `vp-doc.css` sets `.vp-doc p { line-height: 28px }` (specificity 0,1,1).
- * Sermona demos often use a single class on `<p>` (0,1,0), so display / heading stacks lose and collapse.
+ * VitePress `vp-doc.css` fixes paragraph + heading metrics for Markdown (e.g. `.vp-doc p { line-height: 28px }`,
+ * `.vp-doc h1 { font-size: 28px; line-height: 40px }`). Sermona display classes only have one selector (0,1,0)
+ * and get crushed — especially multi-line display inside `<h1>` or `<p>`.
  *
- * 1) Inside `.sermona-root`, paragraphs inherit `--sermona-line-height-body` from the root.
- * 2) Restore token line-heights per role; global `.vp-doc p…` rules also cover patterns outside `.sermona-root`.
+ * 1) `.sermona-root p { line-height: inherit }` restores body rhythm inside pattern wrappers.
+ * 2) `.sermona-display-*` rules with `!important` override VP heading/paragraph prose when needed.
+ * 3) Prefer `.sermona-display-hero__line` blocks in docs for multi-line heroes.
  */
 .vp-doc .sermona-root p {
   line-height: inherit;
 }
 
-/* !important: VitePress ships `.vp-doc p { line-height: 28px }`; some builds/order still let it win. */
-.vp-doc p:is(.sermona-display-hero, .sermona-display-light) {
-  line-height: var(--sermona-line-height-display-tight) !important;
+/* !important: VP `.vp-doc p` (28px lh) and `.vp-doc h1` (40px lh / 28px size) crush display type. */
+.vp-doc :is(h1, h2, h3, h4, h5, h6, p, div).sermona-display-hero {
+  line-height: var(--sermona-line-height-display-tight, 1.18) !important;
+  font-size: clamp(2.25rem, 10.5vw, var(--sermona-font-size-display-megaman)) !important;
+  font-weight: var(--sermona-font-weight-bold) !important;
+  font-family: var(--sermona-font-family-display) !important;
+  text-transform: capitalize !important;
+  color: var(--sermona-color-text-primary) !important;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.vp-doc :is(h1, h2, h3, h4, h5, h6).sermona-display-hero {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+.vp-doc :is(h1, h2, h3, h4, h5, h6, p, div).sermona-display-light {
+  line-height: var(--sermona-line-height-display-tight, 1.18) !important;
+  font-size: clamp(2.75rem, 12vw, var(--sermona-font-size-display-ultraman)) !important;
+  font-weight: var(--sermona-font-weight-light) !important;
+  font-family: var(--sermona-font-family-display) !important;
+  text-transform: capitalize !important;
+  color: var(--sermona-color-text-primary) !important;
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+.vp-doc :is(h1, h2, h3, h4, h5, h6).sermona-display-light {
+  border-top: none !important;
+  padding-top: 0 !important;
 }
 
 .vp-doc p:is(

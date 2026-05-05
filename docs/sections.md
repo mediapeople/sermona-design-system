@@ -21,7 +21,7 @@ A **viewport-tall** band with a **cover** background image, **gradient scrim** f
 <section class="sermona-hero-full sermona-hero-full--cap sermona-hero-full--scrim-heavy" aria-label="Sample full-bleed hero: stage lighting" style="--sermona-hero-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&amp;fit=crop&amp;w=1800&amp;q=80'); min-height: min(420px, 70vh);">
 <div class="sermona-hero-full__inner">
 <p class="sermona-kicker">Campaign</p>
-<h1 class="sermona-display-hero" style="max-width: 14ch; margin: 0 0 var(--sermona-space-3);">Light,<br/>Held Still</h1>
+<h1 class="sermona-display-hero" style="max-width: 14ch; margin: 0 0 var(--sermona-space-3);"><span class="sermona-display-hero__line">Light,</span><span class="sermona-display-hero__line">Held still</span></h1>
 <p class="sermona-lede" style="max-width: 36ch; margin: 0; color: rgba(255,255,255,0.82);">Full-page heroes use cover + scrim so display type stays readable without boxing the photo.</p>
 <div class="sermona-hero-full__actions">
 <a class="sermona-btn sermona-btn--primary" href="/tokens">View tokens</a>

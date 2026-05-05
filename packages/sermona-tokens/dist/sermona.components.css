@@ -49,6 +49,23 @@
   word-break: normal;
 }
 
+/* Multi-line display inside VitePress / prose: block lines beat fragile <br/> line boxes. */
+.sermona-display-hero__line,
+.sermona-display-light__line {
+  display: block;
+}
+
+.sermona-display-hero__line + .sermona-display-hero__line,
+.sermona-display-light__line + .sermona-display-light__line {
+  margin-top: 0.14em;
+}
+
+.sermona-display-hero br,
+.sermona-display-light br {
+  display: block;
+  margin-top: 0.42em;
+}
+
 /* Dual-line editorial headline: ghost layer (muted) + solid title — same grid cell, slight offset */
 .sermona-editorial-stack {
   display: grid;

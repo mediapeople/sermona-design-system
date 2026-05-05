@@ -14,7 +14,7 @@ Import after tokens:
 Two different patterns on this page:
 
 1. **Shadow stack (below):** **`.sermona-editorial-stack`** intentionally puts **two different words** in the same spot — the **back** layer uses **`--sermona-color-text-subtle`** (muted) and a small offset; the **front** layer is the solid primary title. It is supposed to read as a deliberate echo, not a rendering bug.
-2. **Full band further down:** a single **`.sermona-display-hero`** with a `<br />` is **one headline, two lines** — same color on both lines (normal stacked display type).
+2. **Full band further down:** a **`.sermona-display-hero`** with **`.sermona-display-hero__line`** spans (recommended in VitePress) — **one headline, two lines**, same color.
 
 **Dual-line display:** layer **`.sermona-editorial-stack__layer--back`** then **`--front`** (order in DOM does not change paint order; z-index does). Wrap repeats in **`.sermona-editorial-grid`** + **`.sermona-editorial-cell`** (bordered tile, centered body + **`.sermona-link`**).
 
@@ -46,13 +46,16 @@ Two different patterns on this page:
 
 ### Full editorial band
 
-Single **`.sermona-display-hero`** block (two lines, **same** color) — unlike the **shadow stack** above where back/front are **different words** and **different** colors.
+Single **`.sermona-display-hero`** (here a **`<div>`** with **`__line`** spans so prose styles don’t collapse the stack) — unlike the **shadow stack** above: **different** words/colors vs **one title**, **two lines**.
 
 Stack **`.sermona-display-hero`**, meta, **`.sermona-card`**, and **`.sermona-quote`** in one bordered section when you need a long-form preview (kitchen sink).
 
 <div class="sermona-root sermona-layout sermona-stack sermona-stack--loose" style="margin: 2rem 0; border: 1px solid var(--sermona-color-border-subtle); border-radius: var(--sermona-radius-sm);">
 
-<p class="sermona-display-hero">Sermoná<br/>Poetic</p>
+<div class="sermona-display-hero">
+<span class="sermona-display-hero__line">Sermoná</span>
+<span class="sermona-display-hero__line">Poetic</span>
+</div>
 
 <p class="sermona-body">Mixed media editorial body copy. Links use <a class="sermona-link" href="#">accent gold</a>.</p>
 
