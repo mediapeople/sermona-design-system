@@ -1,0 +1,17 @@
+{
+  "name": "sermona-docs-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "@sermona/tokens": "^0.1.0",
+    "@sermona/vitepress-theme": "^0.1.0"
+  }
+}

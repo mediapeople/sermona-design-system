@@ -1,0 +1,15 @@
+{
+  "name": "@sermona/vitepress-theme",
+  "version": "0.1.0",
+  "description": "Default VitePress theme for Sermona — tokens, dark shell, layout wrapper",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": "./src/config.ts"
+  },
+  "peerDependencies": {
+    "@sermona/tokens": ">=0.1.0",
+    "vitepress": "^1.3.0",
+    "vue": "^3.4.0"
+  }
+}

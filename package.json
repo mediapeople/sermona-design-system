@@ -1,0 +1,18 @@
+{
+  "name": "sermona-design-system",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w sermona-docs",
+    "dev:docs": "npm run dev -w sermona-docs",
+    "build:tokens": "npm run build -w @sermona/tokens",
+    "build:docs": "npm run build -w sermona-docs",
+    "build": "npm run build:tokens && npm run build:docs",
+    "bootstrap:docs": "node ./packages/create-sermona-docs/bin.mjs",
+    "create-docs": "node ./packages/create-sermona-docs/bin.mjs",
+    "export:provenance": "node ./scripts/export-provenance.mjs"
+  }
+}

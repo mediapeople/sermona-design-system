@@ -1,0 +1,20 @@
+{
+  "name": "@sermona/tokens",
+  "version": "0.1.0",
+  "description": "Sermona design tokens — colors, type, space — from Figma",
+  "type": "module",
+  "main": "./dist/tokens.json",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/tokens.json",
+    "./tokens.json": "./dist/tokens.json",
+    "./css": "./dist/sermona.css",
+    "./components.css": "./dist/sermona.components.css"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prepare": "npm run build"
+  }
+}

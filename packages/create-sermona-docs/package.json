@@ -1,0 +1,14 @@
+{
+  "name": "create-sermona-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Scaffold a VitePress doc site with Sermona as the default design",
+  "type": "module",
+  "bin": {
+    "create-sermona-docs": "./bin.mjs"
+  },
+  "files": [
+    "bin.mjs",
+    "template"
+  ]
+}
