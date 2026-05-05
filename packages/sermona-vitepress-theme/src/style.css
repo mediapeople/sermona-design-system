@@ -318,8 +318,8 @@
 .sermona-marketing__title {
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
-  font-size: clamp(1.875rem, 3.25vw + 1rem, 3.125rem);
-  line-height: 1.08;
+  font-size: clamp(2.125rem, 4.5vw + 0.85rem, 3.625rem);
+  line-height: 1.07;
   color: var(--sermona-color-text-primary);
   margin: 0;
   letter-spacing: -0.028em;
@@ -328,7 +328,7 @@
 
 .sermona-marketing__lede {
   margin-top: var(--sermona-space-4);
-  max-width: 36rem;
+  max-width: min(42rem, 100%);
   color: rgba(255, 255, 255, 0.72);
   font-size: clamp(1.03rem, 0.9vw + 0.92rem, 1.175rem);
   line-height: 1.58;
@@ -358,15 +358,24 @@
 
 .sermona-marketing__intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(17.5rem, 24rem);
-  gap: var(--sermona-space-7);
+  /* Primary story ~55–58% / supporting card — ties headline + CTAs to the checklist */
+  grid-template-columns: minmax(0, 1.22fr) minmax(18.5rem, 26rem);
+  gap: clamp(2rem, 4.5vw, 3.5rem);
   align-items: start;
   max-width: var(--sermona-layout-max-full);
   margin: 0 auto;
 }
 
+@media (min-width: 1100px) {
+  .sermona-marketing__intro {
+    grid-template-columns: minmax(0, 1.28fr) minmax(20rem, 28rem);
+    gap: clamp(2.25rem, 4vw, 4rem);
+  }
+}
+
 .sermona-marketing__intro-main {
   min-width: 0;
+  padding-right: var(--sermona-space-2);
 }
 
 .sermona-marketing__value {
@@ -429,6 +438,11 @@
   .sermona-marketing__intro {
     grid-template-columns: 1fr;
     gap: var(--sermona-space-6);
+    align-items: start;
+  }
+
+  .sermona-marketing__intro-main {
+    padding-right: 0;
   }
 
   .sermona-marketing__value {
@@ -440,7 +454,7 @@
 
 @media (max-width: 639px) {
   .sermona-marketing__title {
-    font-size: clamp(1.65rem, 4.2vw + 0.85rem, 2.35rem);
+    font-size: clamp(1.85rem, 5.25vw + 0.85rem, 2.85rem);
     line-height: 1.09;
     max-width: none;
   }
