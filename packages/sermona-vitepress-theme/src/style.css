@@ -328,10 +328,6 @@
   align-self: start;
 }
 
-.sermona-marketing__value-card {
-  box-shadow: var(--sermona-shadow-card);
-}
-
 .sermona-marketing__band {
   background: var(--sermona-color-bg-elevated);
   border-block: 1px solid var(--sermona-color-border-subtle);

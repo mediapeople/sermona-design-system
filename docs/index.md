@@ -23,7 +23,7 @@ description: Design system for dark editorial UI — tokens, CSS patterns, adopt
 </div>
 
 <div class="sermona-marketing__value">
-<div class="sermona-card sermona-marketing__value-card">
+<div class="sermona-card sermona-card--flat sermona-marketing__value-card">
 <p class="sermona-kicker" style="margin-bottom: var(--sermona-space-3);">At a glance</p>
 <p class="sermona-h3" style="margin: 0 0 var(--sermona-space-4); letter-spacing: -0.02em;">One System For Voice, Layout, And Ops-Lite Ui</p>
 <ul class="sermona-icon-list sermona-icon-list--compact sermona-icon-list--checks" style="gap: var(--sermona-space-2);">
@@ -58,19 +58,19 @@ description: Design system for dark editorial UI — tokens, CSS patterns, adopt
 <p class="sermona-body" style="color: var(--sermona-color-text-muted); max-width: min(52ch, 100%);">Replace one-off styles with named roles: sections, forms, data displays, ecommerce tiles, modals, and opinionated content patterns — all spelling the same brand.</p>
 </div>
 <div class="sermona-card-grid" style="margin-top: var(--sermona-space-5);">
-<article class="sermona-card sermona-card--stack">
+<article class="sermona-card sermona-card--flat sermona-card--stack">
 <p class="sermona-meta">Foundations</p>
 <p class="sermona-h3">Readable dark surfaces</p>
 <p class="sermona-body" style="color: var(--sermona-color-text-muted);">Page, card, and border tokens tuned for long reading sessions and dense tools — not a generic gray theme.</p>
 <p class="sermona-body" style="margin-top: var(--sermona-space-3);"><a class="sermona-link" href="/foundations">Open foundations →</a></p>
 </article>
-<article class="sermona-card sermona-card--stack">
+<article class="sermona-card sermona-card--flat sermona-card--stack">
 <p class="sermona-meta">Patterns</p>
 <p class="sermona-h3">Layouts you can paste</p>
 <p class="sermona-body" style="color: var(--sermona-color-text-muted);">Hero splits, editorial grids, icon-led lists, swipers, tables, and CTAs — copy HTML, wire your CMS later.</p>
 <p class="sermona-body" style="margin-top: var(--sermona-space-3);"><a class="sermona-link" href="/sections">Section recipes →</a></p>
 </article>
-<article class="sermona-card sermona-card--stack">
+<article class="sermona-card sermona-card--flat sermona-card--stack">
 <p class="sermona-meta">Voice</p>
 <p class="sermona-h3">Words beside the chrome</p>
 <p class="sermona-body" style="color: var(--sermona-color-text-muted);">Labels, errors, buttons, and lists share one tone — so product and marketing do not drift apart.</p>
