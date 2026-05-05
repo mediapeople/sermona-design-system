@@ -134,8 +134,9 @@
   line-height: inherit;
 }
 
+/* !important: VitePress ships `.vp-doc p { line-height: 28px }`; some builds/order still let it win. */
 .vp-doc p:is(.sermona-display-hero, .sermona-display-light) {
-  line-height: var(--sermona-line-height-display-tight);
+  line-height: var(--sermona-line-height-display-tight) !important;
 }
 
 .vp-doc p:is(
