@@ -31,15 +31,30 @@ function mergeAlias(base, user) {
   return { ...base, ...user };
 }
 
+/** @param {*} md */
+export function applySermonaMarkdownTableScroll(md) {
+  const tableOpen = md.renderer.rules.table_open;
+  const tableClose = md.renderer.rules.table_close;
+  md.renderer.rules.table_open = (tokens, idx, options, env, self) => {
+    const prefix = '<div class="vp-table-scroll">\n';
+    return prefix + (tableOpen ? tableOpen(tokens, idx, options, env, self) : "<table>\n");
+  };
+  md.renderer.rules.table_close = (tokens, idx, options, env, self) => {
+    const inner = tableClose ? tableClose(tokens, idx, options, env, self) : "</table>\n";
+    return inner + "</div>\n";
+  };
+}
+
 /**
  * VitePress preset for Sermona doc sites: dark-first chrome aligned with design tokens,
  * plus `resolve.alias` for `@sermona/tokens/*` (use with token imports in `.vitepress/theme/index.ts`).
+ * Wraps markdown tables in `.vp-table-scroll` for horizontal scrolling on small screens (theme CSS).
  *
  * @param {import("vitepress").UserConfig} [config]
  * @param {string} [projectRoot] Directory containing the consuming doc app `package.json` (default: `process.cwd()`).
  */
 export function defineSermonaDocsConfig(config = {}, projectRoot = process.cwd()) {
-  const { appearance, vite: userVite, ...rest } = config;
+  const { appearance, vite: userVite, markdown: userMarkdown, ...rest } = config;
   const tokenDist = tokenDistFromProjectRoot(projectRoot);
   const tokenAliases = sermonaTokensAliases(tokenDist);
   const mergedAlias = mergeAlias(tokenAliases, userVite?.resolve?.alias);
@@ -47,6 +62,13 @@ export function defineSermonaDocsConfig(config = {}, projectRoot = process.cwd()
   return defineConfig({
     ...rest,
     appearance: appearance ?? "force-dark",
+    markdown: {
+      ...userMarkdown,
+      config(md) {
+        applySermonaMarkdownTableScroll(md);
+        userMarkdown?.config?.(md);
+      },
+    },
     vite: {
       ...userVite,
       resolve: {

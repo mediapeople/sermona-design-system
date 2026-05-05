@@ -165,8 +165,17 @@
     max-width: 100%;
   }
 
+  .vp-doc .vp-table-scroll {
+    margin-left: calc(-1 * max(calc(1rem + 0.65em), env(safe-area-inset-left)));
+    margin-right: calc(-1 * max(1rem, env(safe-area-inset-right)));
+    padding-left: max(calc(1rem + 0.65em), env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: var(--sermona-space-2);
+  }
+
   .vp-doc table {
-    font-size: var(--sermona-font-size-xs);
+    font-size: clamp(0.875rem, 0.25vw + 0.82rem, var(--sermona-font-size-meta));
+    line-height: 1.45;
     min-width: 0;
   }
 
@@ -174,7 +183,8 @@
   .vp-doc td {
     word-break: break-word;
     hyphens: auto;
-    padding: var(--sermona-space-1) var(--sermona-space-2);
+    padding: var(--sermona-space-2) var(--sermona-space-3);
+    vertical-align: top;
   }
 }
 
@@ -263,6 +273,34 @@
 }
 
 /* Markdown tables: Sermona density, tabular nums, calmer zebra */
+.vp-doc .vp-table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  margin: var(--sermona-space-4) 0;
+  border-radius: var(--sermona-radius-sm);
+  scrollbar-color: color-mix(in srgb, var(--sermona-color-border-meta) 85%, transparent) transparent;
+}
+
+.vp-doc .vp-table-scroll:focus-visible {
+  outline: 2px solid var(--sermona-color-accent-primary);
+  outline-offset: 2px;
+}
+
+.vp-doc .vp-table-scroll table {
+  margin: 0;
+  min-width: 100%;
+}
+
+.vp-doc .vp-table-scroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--sermona-color-bg-card);
+  background-clip: padding-box;
+  box-shadow: 0 1px 0 var(--sermona-color-border-subtle);
+}
+
 .vp-doc table {
   margin: var(--sermona-space-4) 0;
   border: 1px solid var(--sermona-color-border-subtle);
