@@ -14,7 +14,7 @@
 
   --vp-c-text-1: var(--sermona-color-text-primary);
   --vp-c-text-2: var(--sermona-color-text-muted);
-  --vp-c-text-3: rgba(255, 255, 255, 0.42);
+  --vp-c-text-3: var(--sermona-color-text-subtle);
 
   --vp-c-brand-1: var(--sermona-color-accent-primary);
   --vp-c-brand-2: var(--sermona-color-accent-primary);
@@ -197,8 +197,8 @@
   }
 
   .vp-doc table {
-    font-size: clamp(0.875rem, 0.25vw + 0.82rem, var(--sermona-font-size-meta));
-    line-height: 1.45;
+    font-size: clamp(0.8125rem, 0.2vw + 0.78rem, var(--sermona-font-size-caption));
+    line-height: var(--sermona-line-height-caption);
   }
 
   .vp-doc th,
@@ -364,14 +364,16 @@
 }
 
 .vp-doc th {
-  font-size: var(--sermona-font-size-meta);
+  font-size: var(--sermona-font-size-caption);
   font-weight: var(--sermona-font-weight-bold);
   color: var(--sermona-color-text-primary);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 
 .vp-doc td {
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 
 /* Embedded Sermona layout bands: token default is space-9 padding — too wide for the doc rail */
@@ -713,21 +715,22 @@
   display: inline-flex;
   align-items: baseline;
   flex-shrink: 0;
-  font-size: var(--sermona-font-size-meta, 0.8125rem);
-  line-height: 1.35;
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption, 0.8125rem);
+  line-height: var(--sermona-line-height-caption, 1.45);
+  letter-spacing: var(--sermona-letter-spacing-meta, 0.02em);
+  color: var(--sermona-color-text-subtle);
 }
 
 .sermona-doc-breadcrumbs__item:not(:last-child)::after {
   content: "/";
   margin-left: var(--sermona-space-2);
-  color: var(--sermona-color-text-muted);
+  color: var(--sermona-color-text-subtle);
   opacity: 0.45;
   pointer-events: none;
 }
 
 .sermona-doc-breadcrumbs__link {
-  color: var(--sermona-color-text-muted);
+  color: var(--sermona-color-text-subtle);
   text-decoration: none;
 }
 
@@ -738,7 +741,7 @@
 }
 
 .sermona-doc-breadcrumbs__text {
-  color: var(--sermona-color-text-muted);
+  color: var(--sermona-color-text-subtle);
 }
 
 .sermona-doc-breadcrumbs__current {

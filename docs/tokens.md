@@ -9,7 +9,8 @@ Values are generated into `dist/sermona.css` from `src/tokens.json`.
 | Page | Dark canvas | `--sermona-color-bg-page` |
 | Elevated | Cards / slides | `--sermona-color-bg-elevated` |
 | Accent | Links & quotes | `--sermona-color-accent-primary` |
-| Muted text | Meta, footnotes | `--sermona-color-text-muted` |
+| Muted text | Secondary paragraphs, excerpts | `--sermona-color-text-muted` |
+| Subtle text | Meta lines, hints, table data | `--sermona-color-text-subtle` |
 
 ## Typography (families)
 
@@ -53,7 +54,8 @@ Host the default font files under your product license. Fallbacks are grotesk sy
 | Section H2 (42px) | `.sermona-h2` |
 | Block H3 (32px) | `.sermona-h3` |
 | Body 16 | `.sermona-body` |
-| Meta 14 | `.sermona-meta` |
+| Meta / caption | `.sermona-meta`, hints, prose tables | `font.size.caption` (13px), `.sermona-meta` |
+| UI meta | Uppercase kickers, small UI | `font.size.meta` (14px), e.g. `.sermona-kicker` |
 
 See `tokens.json` for the full scale (`font.size.*`, `font.lineHeight.*`).
 

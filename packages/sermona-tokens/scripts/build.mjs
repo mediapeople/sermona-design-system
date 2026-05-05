@@ -258,9 +258,10 @@ const components = `/**
 .sermona-meta {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-regular);
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
+  color: var(--sermona-color-text-subtle);
   margin: 0;
 }
 
@@ -1275,9 +1276,10 @@ a.sermona-product-card:focus-visible {
 
 .sermona-post__byline {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
-  line-height: var(--sermona-line-height-meta-max);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
   margin: 0;
 }
 
@@ -1523,10 +1525,11 @@ a.sermona-blog-card:focus-visible {
 
 .sermona-blog-card__meta {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
   margin: 0;
-  line-height: var(--sermona-line-height-meta-max);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 
 .sermona-blog-card__title {
@@ -1540,7 +1543,7 @@ a.sermona-blog-card:focus-visible {
 
 .sermona-blog-card__excerpt {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
+  font-size: var(--sermona-font-size-caption);
   color: var(--sermona-color-text-muted);
   line-height: var(--sermona-line-height-body);
   margin: 0;
@@ -2261,15 +2264,17 @@ a.sermona-btn.sermona-btn--ghost:hover {
 
 .sermona-label {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
+  font-size: var(--sermona-font-size-caption);
   font-weight: var(--sermona-font-weight-bold);
-  line-height: var(--sermona-line-height-meta-max);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
   color: var(--sermona-color-text-primary);
 }
 
 .sermona-label--optional {
   font-weight: var(--sermona-font-weight-regular);
-  color: var(--sermona-color-text-muted);
+  color: var(--sermona-color-text-subtle);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 
 .sermona-input,
@@ -2338,15 +2343,16 @@ input.sermona-input[type="file"] {
   min-height: auto;
   padding: var(--sermona-space-2);
   cursor: pointer;
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
+  color: var(--sermona-color-text-subtle);
 }
 
 input.sermona-input[type="file"]::file-selector-button {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);
-  font-size: var(--sermona-font-size-meta);
+  font-size: var(--sermona-font-size-caption);
   line-height: 1.2;
   margin-right: var(--sermona-space-3);
   padding: var(--sermona-space-2) var(--sermona-space-4);
@@ -2367,16 +2373,18 @@ input.sermona-input[type="file"]::file-selector-button:hover {
 
 .sermona-field__hint {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
+  color: var(--sermona-color-text-subtle);
   margin: 0;
 }
 
 .sermona-field__error {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
   color: #f87171;
   margin: 0;
 }
@@ -2426,9 +2434,10 @@ input.sermona-input[type="file"]::file-selector-button:hover {
 }
 
 .sermona-choice__hint {
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
-  line-height: var(--sermona-line-height-meta-max);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
   margin: 0;
 }
 
@@ -2740,9 +2749,10 @@ input.sermona-input[type="file"]::file-selector-button:hover {
 .sermona-choice-card .sermona-choice__hint {
   font-family: var(--sermona-font-family-sans);
   display: block;
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
-  line-height: var(--sermona-line-height-meta-max);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 
 /* CTA strip: let copy column shrink/wrap in flex row */
@@ -2814,9 +2824,10 @@ input.sermona-input[type="file"]::file-selector-button:hover {
 }
 .sermona-stat__label {
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
+  color: var(--sermona-color-text-subtle);
   margin: 0;
 }
 .sermona-stat__meta {
@@ -2997,8 +3008,8 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   min-width: 520px;
   border-collapse: collapse;
   font-family: var(--sermona-font-family-sans);
-  font-size: var(--sermona-font-size-meta);
-  line-height: var(--sermona-line-height-meta-max);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
 }
 .sermona-table caption {
   caption-side: top;
@@ -3033,7 +3044,7 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   white-space: nowrap;
 }
 .sermona-table td {
-  color: var(--sermona-color-text-muted);
+  color: var(--sermona-color-text-subtle);
 }
 .sermona-table--zebra tbody tr:nth-child(even) td,
 .sermona-table--zebra tbody tr:nth-child(even) th {
@@ -3059,12 +3070,15 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   border: 1px solid var(--sermona-color-border-subtle);
   border-radius: var(--sermona-radius-sm);
   background: var(--sermona-color-bg-elevated);
-  font-size: var(--sermona-font-size-meta);
+  font-size: var(--sermona-font-size-body);
   line-height: var(--sermona-line-height-body);
 }
 .sermona-kv dt {
   margin: 0;
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
+  color: var(--sermona-color-text-subtle);
   font-weight: var(--sermona-font-weight-bold);
 }
 .sermona-kv dd {
@@ -3085,10 +3099,11 @@ input.sermona-input[type="file"]::file-selector-button:hover {
   gap: var(--sermona-space-1);
 }
 .sermona-data-pair__label {
-  font-size: var(--sermona-font-size-meta);
-  color: var(--sermona-color-text-muted);
+  font-size: var(--sermona-font-size-caption);
+  color: var(--sermona-color-text-subtle);
   margin: 0;
-  line-height: var(--sermona-line-height-meta-max);
+  line-height: var(--sermona-line-height-caption);
+  letter-spacing: var(--sermona-letter-spacing-meta);
 }
 .sermona-data-pair__value {
   font-size: var(--sermona-font-size-body);
