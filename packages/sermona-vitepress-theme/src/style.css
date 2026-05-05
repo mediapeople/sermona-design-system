@@ -123,6 +123,88 @@
   overflow-x: visible;
 }
 
+/**
+ * VitePress default `vp-doc.css` sets `.vp-doc p { line-height: 28px }` (specificity 0,1,1).
+ * Sermona demos often use a single class on `<p>` (0,1,0), so display / heading stacks lose and collapse.
+ *
+ * 1) Inside `.sermona-root`, paragraphs inherit `--sermona-line-height-body` from the root.
+ * 2) Restore token line-heights per role; global `.vp-doc p…` rules also cover patterns outside `.sermona-root`.
+ */
+.vp-doc .sermona-root p {
+  line-height: inherit;
+}
+
+.vp-doc p:is(.sermona-display-hero, .sermona-display-light) {
+  line-height: var(--sermona-line-height-display-tight);
+}
+
+.vp-doc p:is(
+  .sermona-h2,
+  .sermona-h3,
+  .sermona-post__title,
+  .sermona-blog-card__title,
+  .sermona-post-nav__title,
+  .sermona-service-card__title,
+  .sermona-modal__title,
+  .sermona-admin-topbar__title,
+  .sermona-metric-tile__value,
+  .sermona-instrument-panel__title,
+  .sermona-form-section__title,
+  .sermona-order-summary__total
+) {
+  line-height: var(--sermona-line-height-heading-snug);
+}
+
+.vp-doc p.sermona-stat__value {
+  line-height: var(--sermona-line-height-tight);
+}
+
+.vp-doc p:is(
+  .sermona-meta,
+  .sermona-stat__label,
+  .sermona-blog-card__meta,
+  .sermona-post__byline,
+  .sermona-data-pair__label,
+  .sermona-field__hint,
+  .sermona-field__error,
+  .sermona-choice__hint
+) {
+  line-height: var(--sermona-line-height-caption);
+}
+
+.vp-doc p:is(
+  .sermona-kicker,
+  .sermona-service-card__label,
+  .sermona-swiper__label,
+  .sermona-series-badge,
+  .sermona-product-card__vendor,
+  .sermona-product-card__meta,
+  .sermona-promo-banner__text,
+  .sermona-promo-banner__detail,
+  .sermona-order-summary__row,
+  .sermona-cart-line__variant,
+  .sermona-cart-line__qty,
+  .sermona-price__note,
+  .sermona-icon-list__body--muted
+) {
+  line-height: var(--sermona-line-height-meta-max);
+}
+
+.vp-doc p:is(.sermona-lede, .sermona-quote__text, .sermona-post__deck) {
+  line-height: var(--sermona-line-height-relaxed);
+}
+
+.vp-doc p:is(
+  .sermona-product-card__title,
+  .sermona-cart-line__title,
+  .sermona-icon-tile__title,
+  .sermona-feature-list__title,
+  .sermona-icon-list__title,
+  .sermona-author__name
+) {
+  line-height: var(--sermona-line-height-snug);
+}
+
 /* VitePress heading permalink: keep “#” inside a comfortable line box (VP defaults can clip tall glyphs). */
 .vp-doc .header-anchor {
   line-height: 1;
