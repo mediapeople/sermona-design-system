@@ -170,6 +170,16 @@
   padding-top: 0 !important;
 }
 
+/* Ghost + title stack: pin display typography so VP `.vp-doc` inheritance can’t crush line-height / size on spans. */
+.vp-doc .sermona-editorial-stack__layer {
+  line-height: var(--sermona-line-height-display-tight, 1.12) !important;
+  font-size: var(--sermona-es-fs, clamp(2rem, 5.5vw + 0.5rem, 3.25rem)) !important;
+  font-family: var(--sermona-font-family-display) !important;
+  font-weight: var(--sermona-font-weight-bold) !important;
+  letter-spacing: -0.02em !important;
+  text-transform: capitalize !important;
+}
+
 .vp-doc p:is(
   .sermona-h2,
   .sermona-h3,

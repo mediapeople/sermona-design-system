@@ -182,43 +182,48 @@ const components = `/**
   margin-top: 0.42em;
 }
 
-/* Dual-line editorial headline: ghost layer (muted) + solid title — same grid cell, slight offset */
+/* Dual-line editorial headline: ghost (muted) + solid title — absolute center so layers share one anchor (grid overlap + VP prose was collapsing legibility). */
 .sermona-editorial-stack {
-  display: grid;
-  place-items: center;
-  justify-items: center;
+  --sermona-es-fs: clamp(2rem, 5.5vw + 0.5rem, 3.25rem);
   position: relative;
   isolation: isolate;
   margin: 0 auto;
   max-width: 100%;
   padding-block: var(--sermona-space-4);
-  min-height: 3.25em;
+  /* Layers are position:absolute — they don't stretch the box; reserve one display line + room for diagonal offset */
+  min-height: calc(
+    var(--sermona-es-fs) * var(--sermona-line-height-display-tight) + var(--sermona-space-3)
+  );
 }
 
 .sermona-editorial-stack__layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(16ch, 100%);
+  margin: 0;
+  padding: 0;
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
-  font-size: clamp(2rem, 5.5vw + 0.5rem, 3.25rem);
+  font-size: var(--sermona-es-fs);
   line-height: var(--sermona-line-height-display-tight);
   letter-spacing: -0.02em;
   text-transform: capitalize;
-  grid-column: 1;
-  grid-row: 1;
-  margin: 0;
   overflow-wrap: break-word;
   word-break: normal;
-  max-width: 16ch;
   text-align: center;
 }
 
 .sermona-editorial-stack__layer--back {
-  transform: translate(-0.05em, 0.08em);
+  transform: translate(-50%, -50%) translate(-0.08em, 0.14em);
   color: var(--sermona-color-text-subtle);
   z-index: 0;
 }
 
 .sermona-editorial-stack__layer--front {
-  transform: translate(0.04em, -0.06em);
+  transform: translate(-50%, -50%) translate(0.08em, -0.12em);
   color: var(--sermona-color-text-primary);
   z-index: 1;
 }
