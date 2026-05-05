@@ -165,6 +165,71 @@ const components = `/**
   word-break: normal;
 }
 
+/* Dual-line editorial headline: ghost layer + solid layer (centered “double exposure”) */
+.sermona-editorial-stack {
+  display: grid;
+  place-items: center;
+  justify-items: center;
+  position: relative;
+  isolation: isolate;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-block: var(--sermona-space-2);
+}
+
+.sermona-editorial-stack__layer {
+  font-family: var(--sermona-font-family-display);
+  font-weight: var(--sermona-font-weight-bold);
+  font-size: clamp(2rem, 5.5vw + 0.5rem, 3.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  max-width: 16ch;
+  text-align: center;
+}
+
+.sermona-editorial-stack__layer--back {
+  transform: translate(-0.06em, 0.15em);
+  color: rgba(255, 255, 255, 0.22);
+  z-index: 0;
+}
+
+.sermona-editorial-stack__layer--front {
+  transform: translate(0.05em, -0.1em);
+  color: var(--sermona-color-text-primary);
+  z-index: 1;
+}
+
+.sermona-editorial-cell {
+  background: var(--sermona-color-bg-card);
+  border: 1px solid var(--sermona-color-border-subtle);
+  border-radius: var(--sermona-radius-sm);
+  padding: var(--sermona-space-6) var(--sermona-space-5);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.sermona-editorial-cell__stack {
+  margin-inline: auto;
+}
+
+.sermona-editorial-cell .sermona-body {
+  margin: var(--sermona-space-4) auto 0;
+  max-width: 36ch;
+  color: var(--sermona-color-text-muted);
+}
+
+.sermona-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr));
+  gap: var(--sermona-space-4);
+}
+
 .sermona-h2 {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-bold);

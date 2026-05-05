@@ -11,6 +11,38 @@ Import after tokens:
 
 ## Editorial layout (dark)
 
+**Dual-line display:** **`.sermona-editorial-stack`** layers two **`.sermona-editorial-stack__layer`** spans — **`--back`** (low-contrast, offset) and **`--front`** (solid primary). Wrap repeats in **`.sermona-editorial-grid`** + **`.sermona-editorial-cell`** (bordered tile, centered body + **`.sermona-link`**).
+
+<div class="sermona-root sermona-layout" style="margin: 2rem 0;">
+<div class="sermona-editorial-grid">
+<article class="sermona-editorial-cell">
+<div class="sermona-editorial-stack sermona-editorial-cell__stack" role="group" aria-label="Permená — Poetic">
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--back">Poetic</span>
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--front">Permená</span>
+</div>
+<p class="sermona-body">Mixed media editorial body copy. Links use <a class="sermona-link" href="#">accent gold</a>.</p>
+</article>
+<article class="sermona-editorial-cell">
+<div class="sermona-editorial-stack sermona-editorial-cell__stack" role="group" aria-label="Commerce — Poetic">
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--back">Poetic</span>
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--front">Commerce</span>
+</div>
+<p class="sermona-body">Service-led landings and pricing rails share the same <a class="sermona-link" href="/services">token spine</a> as long reads.</p>
+</article>
+<article class="sermona-editorial-cell">
+<div class="sermona-editorial-stack sermona-editorial-cell__stack" role="group" aria-label="Held still — Light">
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--back">Light</span>
+<span class="sermona-editorial-stack__layer sermona-editorial-stack__layer--front">Held still</span>
+</div>
+<p class="sermona-body">Campaign heroes and full-bleed photography stay legible with <a class="sermona-link" href="/sections">scrims</a> — never boxed-in placeholders.</p>
+</article>
+</div>
+</div>
+
+### Full editorial band
+
+Stack **`.sermona-display-hero`**, meta, **`.sermona-card`**, and **`.sermona-quote`** in one bordered section when you need a single long-form preview (kitchen sink).
+
 <div class="sermona-root sermona-layout sermona-stack sermona-stack--loose" style="margin: 2rem 0; border: 1px solid var(--sermona-color-border-subtle); border-radius: var(--sermona-radius-sm);">
 
 <p class="sermona-display-hero">Sermoná<br/>Poetic</p>
