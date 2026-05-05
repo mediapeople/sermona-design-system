@@ -135,17 +135,20 @@
 }
 
 @media (max-width: 767px) {
-  /* VitePress default is 32px 24px — stack with .vp-doc padding and demo wells, interior reads too narrow */
+  /*
+   * Single horizontal gutter: VitePress VPDoc also pads 24px by default — drop its x-padding so
+   * .vp-doc alone controls inset (avoids “double frame” on phones).
+   */
   .sermona-doc-shell .VPDoc {
-    padding-top: 24px;
+    padding-top: 20px;
     padding-bottom: max(4rem, calc(3rem + env(safe-area-inset-bottom)));
-    padding-left: max(12px, env(safe-area-inset-left));
-    padding-right: max(12px, env(safe-area-inset-right));
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .vp-doc {
-    --vp-doc-pad-left: max(calc(0.875rem + 0.5em), env(safe-area-inset-left));
-    --vp-doc-pad-right: max(0.875rem, env(safe-area-inset-right));
+    --vp-doc-pad-left: max(calc(0.75rem + 0.45em), env(safe-area-inset-left));
+    --vp-doc-pad-right: max(0.75rem, env(safe-area-inset-right));
     padding-left: var(--vp-doc-pad-left);
     padding-right: var(--vp-doc-pad-right);
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
@@ -155,13 +158,14 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Pattern demos: inline padding often uses --space-5; loosen on small screens */
+  /* Pattern demos: default inline styles use --space-5 (32px); keep wells compact on narrow screens */
   .vp-doc .sermona-root.sermona-layout {
-    padding: var(--sermona-space-4) var(--sermona-space-3) !important;
+    padding: var(--sermona-space-2) var(--sermona-space-1) !important;
   }
 
+  /* --sermona-space-3 is ~22px; still reads padded-off on cards */
   .vp-doc .sermona-blog-card__body {
-    padding-inline: var(--sermona-space-3);
+    padding-inline: var(--sermona-space-2);
   }
 
   .VPNav {
@@ -195,6 +199,16 @@
   .vp-doc table {
     font-size: clamp(0.875rem, 0.25vw + 0.82rem, var(--sermona-font-size-meta));
     line-height: 1.45;
+  }
+
+  .vp-doc th,
+  .vp-doc td {
+    padding: var(--sermona-space-1) var(--sermona-space-2);
+  }
+
+  .VPLocalNav .container {
+    padding-left: max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
   }
 }
 
