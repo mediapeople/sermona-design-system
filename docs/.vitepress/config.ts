@@ -13,6 +13,15 @@ const projectRoot = path.resolve(__dirname, "..");
  */
 const siteUrl = process.env.VITEPRESS_SITE_URL?.replace(/\/$/, "") ?? "";
 
+/** Default Open Graph / Twitter image (1200×630 PNG in `docs/public/`). */
+const DEFAULT_SHARE_IMAGE = {
+  path: "/og.png",
+  width: 1200,
+  height: 630,
+  type: "image/png",
+  alt: "Sermona — design system for dark editorial UI",
+} as const;
+
 function docsPathname(relativePath: string): string {
   const stem = relativePath.replace(/\.md$/, "");
   if (stem === "404") return "/404.html";
@@ -46,7 +55,7 @@ function sharingImagePath(frontmatter: Record<string, unknown>): string {
     (typeof frontmatter.image === "string" && frontmatter.image.trim()
       ? frontmatter.image
       : undefined);
-  if (!explicit) return "/favicon.svg";
+  if (!explicit) return DEFAULT_SHARE_IMAGE.path;
   return explicit.startsWith("/") ? explicit : `/${explicit}`;
 }
 
@@ -96,6 +105,17 @@ function sharingMetaHead(ctx: {
     ["meta", { property: "og:locale", content: ogLocale }],
   ];
 
+  if (imagePath === DEFAULT_SHARE_IMAGE.path) {
+    head.push(
+      ["meta", { property: "og:image:width", content: String(DEFAULT_SHARE_IMAGE.width) }],
+      ["meta", { property: "og:image:height", content: String(DEFAULT_SHARE_IMAGE.height) }],
+      ["meta", { property: "og:image:type", content: DEFAULT_SHARE_IMAGE.type }],
+      ["meta", { name: "twitter:image:alt", content: DEFAULT_SHARE_IMAGE.alt }],
+    );
+  } else {
+    head.push(["meta", { name: "twitter:image:alt", content: ogDescription }]);
+  }
+
   if (canonical) {
     head.push(["link", { rel: "canonical", href: canonical }]);
     head.push(["meta", { property: "og:url", content: canonical }]);
@@ -112,6 +132,7 @@ function sharingMetaHead(ctx: {
       name: ctx.siteTitle,
       url: canonical,
       description: ctx.siteDescription,
+      image: ogImage,
     };
     head.push([
       "script",
@@ -154,6 +175,8 @@ export default defineSermonaDocsConfig(
           content: "black-translucent",
         },
       ],
+      ["meta", { name: "application-name", content: "Sermona" }],
+      ["meta", { name: "apple-mobile-web-app-title", content: "Sermona" }],
     ],
     themeConfig: {
       /** Short navbar label — full site name stays in `title` / OG. */

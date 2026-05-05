@@ -5,6 +5,7 @@ aside: false
 outline: false
 title: Sermona
 description: Design system for dark editorial UI — tokens, CSS patterns, adoption handbook, and Figma library.
+image: /og.png
 ---
 
 <main class="sermona-root sermona-marketing" aria-labelledby="marketing-heading">

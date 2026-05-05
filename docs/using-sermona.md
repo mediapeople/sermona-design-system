@@ -97,7 +97,7 @@ Before you merge or ship:
 
 For **Open Graph**, **Twitter / X cards**, **canonical URLs**, and a small **WebSite** JSON-LD block on the home page, the docs build expects a deployed origin:
 
-- Set **`VITEPRESS_SITE_URL`** to the public origin with **no trailing slash** (example: `https://design.example.com`) when running `vitepress build` (e.g. in CI or Netlify env vars). If it is unset, sharing tags still emit **titles and descriptions**, but **`og:url`**, **`link[rel=canonical]`**, and absolute **`og:image`** / **`twitter:image`** URLs are omitted—set the env var for production previews in Slack, iMessage, and search.
+- Set **`VITEPRESS_SITE_URL`** to the public origin with **no trailing slash** (example: `https://design.example.com`) when running `vitepress build` (e.g. in CI or Netlify env). The **Netlify** config in this repo sets it to the production docs URL; override there if you use a custom domain. If it is unset, sharing tags still emit **titles and descriptions**, but **`og:url`**, **`link[rel=canonical]`**, and absolute **`og:image`** / **`twitter:image`** URLs are omitted—set the env var for production previews in Slack, iMessage, and search.
 
 Optional **frontmatter** overrides:
 
@@ -105,7 +105,7 @@ Optional **frontmatter** overrides:
 | --- | --- |
 | `ogTitle` | Open Graph / Twitter title (defaults to page title) |
 | `ogDescription` | OG/Twitter description (defaults to page `description`) |
-| `image` or `ogImage` | Social image path from site root (e.g. `/og.png`). Defaults to **`/favicon.svg`**; for best results in link previews, add a **1200×630** (or similar) raster under `docs/public/` and point pages at it. |
+| `image` or `ogImage` | Social image path from site root (e.g. `/og.png`). Defaults to **`/og.png`** (1200×630 source in `docs/public/og-source.svg`; run **`npm run generate:share-assets`** after editing that SVG). |
 
 The **404** page gets **`noindex`** so stray errors are less likely to rank.
 

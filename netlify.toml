@@ -1,8 +1,8 @@
-# Sermona docs site (VitePress). Set VITEPRESS_SITE_URL in Netlify UI to your
-# canonical URL (e.g. https://sermona.yourdomain.com) so Open Graph / canonical tags resolve.
+# Sermona docs site (VitePress). Canonical URL for OG / Twitter cards / JSON-LD (no trailing slash).
 [build]
   command = "npm run build"
   publish = "docs/.vitepress/dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  VITEPRESS_SITE_URL = "https://sermona-design-system.netlify.app"

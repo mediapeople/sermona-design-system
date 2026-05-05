@@ -22,4 +22,6 @@ jobs:
         run: npm ci
 
       - name: Build tokens + docs
+        env:
+          VITEPRESS_SITE_URL: https://sermona-design-system.netlify.app
         run: npm run build
