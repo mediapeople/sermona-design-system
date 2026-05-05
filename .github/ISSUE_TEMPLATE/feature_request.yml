@@ -1,0 +1,18 @@
+name: Feature / docs request
+description: Suggest a pattern, token, or handbook improvement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or gap
+      description: Who is this for and what can’t they do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Token names, new doc page, pattern link to Figma, etc.
+    validations:
+      required: true

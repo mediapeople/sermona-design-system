@@ -1,6 +1,23 @@
 # Sermona design system
 
-Design tokens and CSS primitives derived from [Sermona (Figma)](https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona). This repo is both the **source of truth for tokens** and a **default “doc creator” stack** for new documentation sites (VitePress + Sermona theme).
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**Handbook (deployed):** [sermona-design-system.netlify.app](https://sermona-design-system.netlify.app) · **Source:** [github.com/mediapeople/sermona-design-system](https://github.com/mediapeople/sermona-design-system) · **Figma:** [Sermona file](https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona)
+
+If the hosted site is unavailable, clone this repo and run **`npm install`** and **`npm run dev`** to read the handbook locally.
+
+Design tokens and CSS primitives derived from Figma. This repo is the **source of truth for tokens** and a **documentation stack** (VitePress + Sermona theme) you can clone or scaffold from.
+
+## Quick start
+
+```bash
+git clone https://github.com/mediapeople/sermona-design-system.git
+cd sermona-design-system
+npm install
+npm run dev              # handbook → http://127.0.0.1:5173/
+```
+
+Requires **Node 20+** (see `engines` in root `package.json`). To ship static HTML: `npm run build` → output in `docs/.vitepress/dist/`.
 
 ## Packages
 
@@ -8,7 +25,7 @@ Design tokens and CSS primitives derived from [Sermona (Figma)](https://www.figm
 | --- | --- |
 | `@sermona/tokens` | `tokens.json`, generated `sermona.css` + `sermona.components.css` |
 | `@sermona/vitepress-theme` | Default VitePress theme: Sermona shell, `force-dark`, token-mapped VP variables |
-| `create-sermona-docs` | Private scaffold CLI — run `node ./packages/create-sermona-docs/bin.mjs` |
+| `create-sermona-docs` | Scaffold CLI — `npm run create-docs -- ../my-site --link .` |
 
 ## Monorepo layout
 
@@ -34,31 +51,20 @@ The export includes `PROVENANCE.json` (timestamp, source path, `git rev-parse` w
 ## Commands
 
 ```bash
-cd /path/to/sermona-design-system
+cd sermona-design-system
 npm install
 npm run dev              # VitePress → http://127.0.0.1:5173/
 npm run build:tokens     # Regenerate dist/*.css from tokens
 npm run build            # tokens + static docs site
 ```
 
-## Publish the repo and the handbook
+## Hosting the handbook
 
-1. **Create an empty Git repository** on GitHub (or GitLab, etc.) — do not add a README or license there if you already have them locally; you want a clean push.
-2. **From this folder:**
+The repo includes **`netlify.toml`** (`npm run build`, publish **`docs/.vitepress/dist`**). In Netlify **Environment variables**, set **`VITEPRESS_SITE_URL`** to your live origin (no trailing slash) for Open Graph / canonical URLs.
 
-   ```bash
-   git init
-   git add -A
-   git commit -m "Initial commit: Sermona design system"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USER/sermona-design-system.git
-   git push -u origin main
-   ```
+You can also use **GitHub Pages, Cloudflare Pages, or Vercel**: build **`npm run build`**, output **`docs/.vitepress/dist`**, Node **20+**.
 
-3. **Host the static docs** so “hand this link to a developer” works:
-   - **Netlify:** connect the repo; use the included **`netlify.toml`** (`npm run build`, publish `docs/.vitepress/dist`). In **Site settings → Environment variables**, set **`VITEPRESS_SITE_URL`** to your live site URL (no trailing slash) for correct sharing/meta tags.
-   - **GitHub Pages, Cloudflare Pages, Vercel:** same idea — build command **`npm run build`**, output directory **`docs/.vitepress/dist`**, Node **20**.
-4. **npm (optional):** publishing **`@sermona/tokens`** and **`@sermona/vitepress-theme`** lets consumers depend on versions instead of `file:`. Until then, `file:` / `npm link` from this repo is fine.
+**Publishing packages:** putting `@sermona/tokens` and `@sermona/vitepress-theme` on npm lets consumers use semver instead of pointing at this repo with `file:`.
 
 ## Bootstrap a new doc site
 
@@ -95,3 +101,8 @@ The starter’s `.vitepress/config.ts` uses `defineSermonaDocsConfig()` (dark-by
 ```
 
 Host **Scto Grotesk A** under your font license; tokens reference it by name with system fallbacks.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+

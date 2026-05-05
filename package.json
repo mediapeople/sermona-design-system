@@ -1,6 +1,19 @@
 {
   "name": "sermona-design-system",
   "private": true,
+  "description": "Sermona design tokens, CSS primitives, VitePress handbook, and doc scaffold — dark editorial UI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mediapeople/sermona-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mediapeople/sermona-design-system/issues"
+  },
+  "homepage": "https://sermona-design-system.netlify.app",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
   "workspaces": [
     "packages/*",
     "docs"
