@@ -14,7 +14,7 @@ description: Design system for dark editorial UI — tokens, CSS patterns, adopt
 <div class="sermona-marketing__intro-main">
 <p class="sermona-kicker">Design system</p>
 <h1 class="sermona-marketing__title" id="marketing-heading">Dark editorial UI, documented and shipped as CSS</h1>
-<p class="sermona-lede" style="margin-top: var(--sermona-space-4);">Sermona is a token contract, a component layer, and a team handbook in one — so designers and engineers stay aligned without a proprietary framework.</p>
+<p class="sermona-lede sermona-marketing__lede">Sermona is a token contract, a component layer, and a team handbook in one — so designers and engineers stay aligned without a proprietary framework.</p>
 <div class="sermona-hero-full__actions" style="margin-top: var(--sermona-space-5);">
 <a class="sermona-btn sermona-btn--primary" href="/using-sermona">Start with the handbook</a>
 <a class="sermona-btn sermona-btn--secondary" href="/tokens">Browse tokens</a>
@@ -25,7 +25,7 @@ description: Design system for dark editorial UI — tokens, CSS patterns, adopt
 <div class="sermona-marketing__value">
 <div class="sermona-card sermona-card--flat sermona-marketing__value-card">
 <p class="sermona-kicker" style="margin-bottom: var(--sermona-space-3);">At a glance</p>
-<p class="sermona-h3" style="margin: 0 0 var(--sermona-space-4); letter-spacing: -0.02em;">One System For Voice, Layout, And Ops-Lite Ui</p>
+<p class="sermona-h3 sermona-marketing__value-title">One system for voice, layout, and the whole surface.</p>
 <ul class="sermona-icon-list sermona-icon-list--compact sermona-icon-list--checks" style="gap: var(--sermona-space-2);">
 <li class="sermona-icon-list__item">
 <span class="sermona-icon-list__marker" aria-hidden="true"><span class="sermona-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></span></span>

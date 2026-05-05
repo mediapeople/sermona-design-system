@@ -51,6 +51,21 @@
 }
 
 /**
+ * Top nav: fewer, grouped items + slightly denser type so the bar fits without a "..." overflow.
+ */
+.VPNavBarMenu.menu .VPNavBarMenuLink {
+  padding-inline: max(0.45rem, 7px);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.VPNavBarMenu.menu .VPFlyout > .button {
+  padding-inline: max(0.45rem, 7px);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/**
  * Narrow viewports: notch / home-indicator safe areas + no horizontal bleed from wide code/tables.
  */
 @media (max-width: 959px) {
@@ -288,12 +303,29 @@
 .sermona-marketing__title {
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
-  font-size: clamp(2.1rem, 8.5vw, var(--sermona-font-size-display-megaman));
-  line-height: 1.06;
+  font-size: clamp(1.875rem, 3.25vw + 1rem, 3.125rem);
+  line-height: 1.08;
   color: var(--sermona-color-text-primary);
   margin: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.028em;
   text-transform: none;
+}
+
+.sermona-marketing__lede {
+  margin-top: var(--sermona-space-4);
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1.03rem, 0.9vw + 0.92rem, 1.175rem);
+  line-height: 1.58;
+}
+
+.sermona-marketing .sermona-marketing__value-title {
+  margin: 0 0 var(--sermona-space-4);
+  letter-spacing: -0.02em;
+  font-weight: var(--sermona-font-weight-bold);
+  font-size: clamp(1.05rem, 0.55vw + 0.98rem, 1.3125rem);
+  line-height: 1.28;
+  color: var(--sermona-color-text-primary);
 }
 
 .sermona-marketing__hero {
@@ -303,9 +335,9 @@
   padding-inline: var(--sermona-space-4);
   border-bottom: 1px solid var(--sermona-color-border-subtle);
   background: radial-gradient(
-    ellipse 72% 65% at 50% -32%,
-    rgba(255, 214, 0, 0.12) 0%,
-    transparent 55%
+    ellipse 78% 68% at 50% -38%,
+    rgba(255, 214, 0, 0.075) 0%,
+    transparent 56%
   );
 }
 
@@ -393,8 +425,9 @@
 
 @media (max-width: 639px) {
   .sermona-marketing__title {
-    font-size: clamp(1.65rem, 6.5vw + 0.35rem, var(--sermona-font-size-display-megaman));
-    line-height: 1.08;
+    font-size: clamp(1.65rem, 4.2vw + 0.85rem, 2.35rem);
+    line-height: 1.09;
+    max-width: none;
   }
 
   .sermona-marketing__hero {

@@ -86,7 +86,7 @@ Before you merge or ship:
 ## Navigation (handbook wayfinding)
 
 - **Breadcrumbs** appear above the main article on doc pages: they follow the same hierarchy as the **left sidebar** (section group → page).
-- **Top nav** highlights **Patterns** when you are on any pattern page (not only when a flyout child is an exact route match).
+- **Top nav** is grouped (**Handbook**, **CSS**, **Patterns**, **Figma**) so the bar stays scannable; the **sidebar** still lists every page. **Patterns** stays highlighted on any pattern route via `activeMatch`.
 - **On this page** (right rail on wide viewports) lists **h2–h3** headings so readers can jump within a long doc.
 - **Previous / Next** at the bottom follow the **flattened sidebar order** (Introduction → Systems → Patterns → Content). To tune labels per page, use **`docFooterText`** on a sidebar item. To point somewhere other than the default neighbor, set frontmatter:
   - `prev: "Custom label"` / `next: "Custom label"` (label only, link stays sidebar order)

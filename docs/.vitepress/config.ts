@@ -156,6 +156,8 @@ export default defineSermonaDocsConfig(
       ],
     ],
     themeConfig: {
+      /** Short navbar label — full site name stays in `title` / OG. */
+      siteTitle: "Sermona",
       sidebarMenuLabel: "All pages",
       outline: {
         label: "On this page",
@@ -170,11 +172,25 @@ export default defineSermonaDocsConfig(
       externalLinkIcon: true,
       nav: [
         { text: "Home", link: "/" },
-        { text: "Guide", link: "/using-sermona" },
-        { text: "Good design", link: "/good-digital-design" },
-        { text: "Foundations", link: "/foundations" },
-        { text: "Tokens", link: "/tokens" },
-        { text: "Components", link: "/components" },
+        {
+          text: "Handbook",
+          activeMatch:
+            "/(using-sermona|good-digital-design|foundations|voice-and-copy)",
+          items: [
+            { text: "Using Sermona", link: "/using-sermona" },
+            { text: "Good digital design", link: "/good-digital-design" },
+            { text: "Foundations", link: "/foundations" },
+            { text: "Voice & copy", link: "/voice-and-copy" },
+          ],
+        },
+        {
+          text: "CSS",
+          activeMatch: "/(tokens|components)",
+          items: [
+            { text: "Tokens", link: "/tokens" },
+            { text: "Components", link: "/components" },
+          ],
+        },
         {
           text: "Patterns",
           activeMatch:
@@ -193,7 +209,6 @@ export default defineSermonaDocsConfig(
             { text: "Admin & instrumentation", link: "/admin-dashboard" },
           ],
         },
-        { text: "Voice & copy", link: "/voice-and-copy" },
         { text: "Figma", link: "https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona" },
       ],
       sidebar: [
