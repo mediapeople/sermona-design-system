@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: Handbook (live site)
-    url: https://sermona-design-system.netlify.app
+    url: https://sermonacss.com
     about: Browse tokens, patterns, and adoption docs.
   - name: Figma — Sermona
     url: https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona

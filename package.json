@@ -9,7 +9,7 @@
   "bugs": {
     "url": "https://github.com/mediapeople/sermona-design-system/issues"
   },
-  "homepage": "https://sermona-design-system.netlify.app",
+  "homepage": "https://sermonacss.com",
   "license": "MIT",
   "engines": {
     "node": ">=20"

@@ -1,8 +1,9 @@
 # Sermona docs site (VitePress). Canonical URL for OG / Twitter cards / JSON-LD (no trailing slash).
+# Custom domain: Netlify → Domain management → add sermonacss.com (and optional www); point DNS at Netlify’s records, then set primary domain.
 [build]
   command = "npm run build"
   publish = "docs/.vitepress/dist"
 
 [build.environment]
   NODE_VERSION = "20"
-  VITEPRESS_SITE_URL = "https://sermona-design-system.netlify.app"
+  VITEPRESS_SITE_URL = "https://sermonacss.com"

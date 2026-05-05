@@ -2,7 +2,7 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-**Handbook (deployed):** [sermona-design-system.netlify.app](https://sermona-design-system.netlify.app) · **Source:** [github.com/mediapeople/sermona-design-system](https://github.com/mediapeople/sermona-design-system) · **Figma:** [Sermona file](https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona)
+**Handbook (deployed):** [sermonacss.com](https://sermonacss.com) · **Source:** [github.com/mediapeople/sermona-design-system](https://github.com/mediapeople/sermona-design-system) · **Figma:** [Sermona file](https://www.figma.com/design/IC2hBpxXtkX9Hzb5IMdwmh/Sermona)
 
 If the hosted site is unavailable, clone this repo and run **`npm install`** and **`npm run dev`** to read the handbook locally.
 
