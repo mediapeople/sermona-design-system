@@ -58,7 +58,7 @@ Host the default font files under your product license. Fallbacks are grotesk sy
 | UI meta (14px) | Uppercase kickers, dense UI (e.g. `.sermona-kicker`) |
 | Heading stack (line-height) | `.sermona-h2`, `.sermona-h3` → `--sermona-line-height-heading-snug` |
 
-See `tokens.json` for the full scale (`font.size.*`, `font.lineHeight.*`).
+See `tokens.json` for the full scale (`font.size.*`, `font.lineHeight.*`). Display headlines use **`--sermona-line-height-display-tight`** so multi-line **`.sermona-display-hero` / `.sermona-display-light`** stay legible in narrow rails.
 
 ## Space & radii
 

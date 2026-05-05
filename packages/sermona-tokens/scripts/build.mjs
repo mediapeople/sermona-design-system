@@ -144,7 +144,7 @@ const components = `/**
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-light);
   font-size: clamp(2.75rem, 12vw, var(--sermona-font-size-display-ultraman));
-  line-height: 1.06;
+  line-height: var(--sermona-line-height-display-tight);
   text-transform: capitalize;
   color: var(--sermona-color-text-primary);
   margin: 0;
@@ -157,7 +157,7 @@ const components = `/**
   font-family: var(--sermona-font-family-display);
   font-weight: var(--sermona-font-weight-bold);
   font-size: clamp(2.25rem, 10.5vw, var(--sermona-font-size-display-megaman));
-  line-height: 1.06;
+  line-height: var(--sermona-line-height-display-tight);
   text-transform: capitalize;
   color: var(--sermona-color-text-primary);
   margin: 0;
