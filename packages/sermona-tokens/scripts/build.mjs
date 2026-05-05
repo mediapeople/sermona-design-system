@@ -398,6 +398,27 @@ const sectionPatterns = `
   margin: 0;
 }
 
+/* Extra air before display / section titles (not before lede/meta — those use parent gap) */
+.sermona-kicker:has(
+  + :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .sermona-h2,
+    .sermona-h3,
+    .sermona-marketing__title,
+    .sermona-post__title,
+    .sermona-good-hero__title,
+    .sermona-display-hero,
+    .sermona-display-light
+  )
+) {
+  margin-bottom: var(--sermona-space-3);
+}
+
 .sermona-lede {
   font-family: var(--sermona-font-family-sans);
   font-weight: var(--sermona-font-weight-light);
@@ -1221,7 +1242,7 @@ a.sermona-product-card:focus-visible {
 }
 
 .sermona-post__eyebrow {
-  margin: 0 0 var(--sermona-space-2);
+  margin: 0 0 var(--sermona-space-3);
 }
 
 .sermona-post__title {
@@ -1275,7 +1296,7 @@ a.sermona-product-card:focus-visible {
   letter-spacing: var(--sermona-letter-spacing-uppercase-label);
   text-transform: uppercase;
   color: var(--sermona-color-accent-primary);
-  margin: 0 0 var(--sermona-space-2);
+  margin: 0 0 var(--sermona-space-3);
 }
 
 .sermona-post__cover {
@@ -1495,7 +1516,7 @@ a.sermona-blog-card:focus-visible {
 .sermona-blog-card__body {
   display: flex;
   flex-direction: column;
-  gap: var(--sermona-space-2);
+  gap: var(--sermona-space-3);
   padding: 0 var(--sermona-space-4);
   flex: 1 1 auto;
 }
