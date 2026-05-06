@@ -260,8 +260,9 @@
 
 @media (max-width: 767px) {
   /*
-   * Single horizontal gutter: VitePress VPDoc also pads 24px by default — drop its x-padding so
-   * .vp-doc alone controls inset (avoids “double frame” on phones).
+   * Single horizontal gutter on phones: VPDoc’s default 24px side padding is zeroed here so we
+   * control inset in one place. Pad .content-container (not only .vp-doc) so doc-before slots
+   * like breadcrumbs align with prose — they sit outside <main class="vp-doc"> in VitePress.
    */
   .sermona-doc-shell .VPDoc {
     padding-top: 20px;
@@ -270,11 +271,17 @@
     padding-right: 0;
   }
 
-  .vp-doc {
-    --vp-doc-pad-left: max(calc(0.75rem + 0.45em), env(safe-area-inset-left));
-    --vp-doc-pad-right: max(0.75rem, env(safe-area-inset-right));
+  .sermona-doc-shell .VPDoc .content-container {
+    --vp-doc-pad-left: max(var(--sermona-space-4), env(safe-area-inset-left));
+    --vp-doc-pad-right: max(var(--sermona-space-4), env(safe-area-inset-right));
     padding-left: var(--vp-doc-pad-left);
     padding-right: var(--vp-doc-pad-right);
+    box-sizing: border-box;
+  }
+
+  .vp-doc {
+    padding-left: 0;
+    padding-right: 0;
     padding-bottom: max(2rem, env(safe-area-inset-bottom));
     word-break: break-word;
     overflow-wrap: anywhere;
