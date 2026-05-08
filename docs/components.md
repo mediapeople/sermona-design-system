@@ -111,7 +111,7 @@ Full guidance: [Complex forms](/complex-forms).
 
 ## Cards & horizontal swipers
 
-- **`.sermona-card`** — modifiers **`--flat`**, **`--dense`**, **`--stack`**, **`--interactive`**; **`.sermona-card__footer`** for pinned footers with **`--stack`**.  
+- **`.sermona-card`** — modifiers **`--flat`**, **`--dense`**, **`--stack`**, **`--interactive`**; **`.sermona-card__footer`** for pinned footers with **`--stack`**. Dense / variable-data examples: [Cards → Core to card](/cards-and-swipers#core-to-card-exemplified).  
 - **`.sermona-card-grid`** — responsive editorial card grid.  
 - **`.sermona-swiper`**, **`.sermona-swiper__track`**, **`.sermona-swiper__slide`** — scroll-snap horizontal deck; **`--bleed`**, **`--fade`**, **`--peek`**, **`--wide`**.  
 - **`.sermona-service-card--interactive`**, **`a.sermona-service-card`** — linked / hover service tiles.

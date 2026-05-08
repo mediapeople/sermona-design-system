@@ -1,6 +1,6 @@
 ---
 title: Cards & horizontal swipers
-description: Editorial cards, grids, interactive surfaces, and scroll-snap horizontal decks — when to use a grid vs a swiper and how to keep them accessible.
+description: Editorial cards, high-density and variable-data examples, grids, interactive surfaces, and scroll-snap horizontal decks — when to use a grid vs a swiper and how to keep them accessible.
 ---
 
 # Cards & horizontal swipers
@@ -17,6 +17,70 @@ Default: elevated surface, hairline border, **card shadow**, generous padding.
 | **`.sermona-card--dense`** | Tighter padding in dense dashboards or nested layouts. |
 | **`.sermona-card--stack`** | Flex column + gap; pair with **`.sermona-card__footer`** and `margin-top: auto` on the footer for **pinned footers** (e.g. CTA at bottom). |
 | **`.sermona-card--interactive`** | Hover lift + border brightening; use on **`<a>`** for whole-card links — add **`focus-visible`** outline (included for `a.sermona-card`). |
+
+## Core to card (exemplified)
+
+A **card** is one **subject** with a scannable spine: **label → value**, then proof or action. Editorial cards breathe; **dashboard / ops** cards tighten **padding** (**`--dense`**), often drop shadow (**`--flat`**) when they sit on an already-elevated band, and lean on **caption/meta** plus **tabular numerals** for **variable data** (amounts, IDs, dates). Prefer **`.sermona-data-pair`** stacks or [key–value panels](/data-and-tables) over long paragraphs; use **em dash** or muted copy for missing fields so length doesn’t jump.
+
+**Accommodations at a glance**
+
+| Need | Lever |
+| --- | --- |
+| Tighter vertical rhythm | **`--dense`**, smaller gaps on inner stacks (`gap: var(--sermona-space-2)`) |
+| Wall of metrics on a band | **`--flat`** to avoid shadow noise |
+| Label / value scan | **`.sermona-data-pair`**, **`.sermona-meta`** kicker, **`font-variant-numeric`** on values (pairs / `.sermona-kv`) |
+| Optional / empty fields | Muted **—** or **“Not set”**, same line height as filled rows |
+| Whole-card drill-down | **`--interactive`**; don’t bury competing links inside |
+
+### Editorial vs dense variable data (live)
+
+<div class="sermona-root sermona-layout" style="margin: 1.5rem 0; padding: var(--sermona-space-5); border: 1px solid var(--sermona-color-border-subtle); border-radius: var(--sermona-radius-md);">
+
+<p class="sermona-meta" style="margin: 0 0 var(--sermona-space-4);">Same chrome, different density — default padding and story-led copy vs <code>--dense</code> <code>--flat</code> and data pairs.</p>
+
+<div class="sermona-card-grid">
+<article class="sermona-card sermona-card--stack" aria-label="Editorial card example">
+<p class="sermona-kicker" style="margin:0;">Field notes</p>
+<p class="sermona-h3" style="margin:0;">When the card is the story</p>
+<p class="sermona-body" style="margin:0;">One idea, a short proof, and a single next step. Default padding and shadow separate this block from the page.</p>
+<footer class="sermona-card__footer"><a class="sermona-link" href="/voice-and-copy">Voice & copy</a></footer>
+</article>
+
+<article class="sermona-card sermona-card--dense sermona-card--flat sermona-card--stack" aria-label="Dense variable data card example">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: var(--sermona-space-3);">
+<div>
+<p class="sermona-meta" style="margin:0;">Shipment · SYD→MEL</p>
+<p class="sermona-h3" style="margin: var(--sermona-space-1) 0 0; font-size: var(--sermona-font-size-h4);">Batch 2026-05-08441</p>
+</div>
+<span class="sermona-status-badge sermona-status-badge--warn"><span class="sermona-status-badge__dot" aria-hidden="true"></span>Delayed</span>
+</div>
+
+<div class="sermona-stack" style="margin-top: var(--sermona-space-3); gap: var(--sermona-space-2);">
+<div class="sermona-data-pair">
+<p class="sermona-data-pair__label">SKU</p>
+<p class="sermona-data-pair__value" style="font-family: var(--sermona-font-family-mono); font-size: var(--sermona-font-size-caption); font-weight: 500;">SER-MTL-GLD-009</p>
+</div>
+<div class="sermona-data-pair">
+<p class="sermona-data-pair__label">Units</p>
+<p class="sermona-data-pair__value">1,024</p>
+</div>
+<div class="sermona-data-pair">
+<p class="sermona-data-pair__label">ET warehouse</p>
+<p class="sermona-data-pair__value">May 09 · 06:40</p>
+</div>
+<div class="sermona-data-pair">
+<p class="sermona-data-pair__label">PO number</p>
+<p class="sermona-data-pair__value" style="font-weight: 400; color: var(--sermona-color-text-muted);">—</p>
+</div>
+</div>
+
+<p class="sermona-meta" style="margin: var(--sermona-space-3) 0 0;">Last event · Customs hold · 2h ago · Operator N.D.</p>
+</article>
+</div>
+
+</div>
+
+Overflowing or comparing many rows of variable data belongs in a [table](/data-and-tables) or dedicated admin pattern — keep the **card** as the summary surface.
 
 ## Grid vs swiper
 
