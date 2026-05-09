@@ -54,6 +54,7 @@ The export includes `PROVENANCE.json` (timestamp, source path, `git rev-parse` w
 cd sermona-design-system
 npm install
 npm run dev              # VitePress → http://127.0.0.1:5173/
+npm test                 # regression checks on generated token CSS
 npm run build:tokens     # Regenerate dist/*.css from tokens
 npm run build            # tokens + static docs site
 ```
@@ -64,7 +65,7 @@ The repo includes **`netlify.toml`** (`npm run build`, publish **`docs/.vitepres
 
 You can also use **GitHub Pages, Cloudflare Pages, or Vercel**: build **`npm run build`**, output **`docs/.vitepress/dist`**, Node **20+**.
 
-**Publishing packages:** putting `@sermona/tokens` and `@sermona/vitepress-theme` on npm lets consumers use semver instead of pointing at this repo with `file:`.
+**Publishing packages:** putting `@sermona/tokens` and `@sermona/vitepress-theme` on npm lets consumers use semver instead of pointing at this repo with `file:`. See **[RELEASE.md](RELEASE.md)** and the handbook page **[Elevating](https://sermonacss.com/elevating)** for the maturity ladder and npm checklist.
 
 ## Bootstrap a new doc site
 

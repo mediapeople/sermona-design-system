@@ -203,9 +203,10 @@ export default defineSermonaDocsConfig(
         {
           text: "Handbook",
           activeMatch:
-            "/(using-sermona|good-digital-design|foundations|voice-and-copy)",
+            "/(using-sermona|elevating|good-digital-design|foundations|voice-and-copy)",
           items: [
             { text: "Using Sermona", link: "/using-sermona" },
+            { text: "Elevating", link: "/elevating" },
             { text: "Good digital design", link: "/good-digital-design" },
             { text: "Foundations", link: "/foundations" },
             { text: "Voice & copy", link: "/voice-and-copy" },
@@ -245,6 +246,7 @@ export default defineSermonaDocsConfig(
           items: [
             { text: "Overview", link: "/" },
             { text: "Using Sermona", link: "/using-sermona" },
+            { text: "Elevating", link: "/elevating" },
             { text: "Good digital design", link: "/good-digital-design" },
             { text: "Foundations", link: "/foundations" },
           ],

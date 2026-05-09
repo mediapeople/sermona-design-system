@@ -7,7 +7,7 @@ description: How teams adopt, describe, and ship with the Sermona design system 
 
 Sermona is a **dark-first editorial system**: **Figma** is the visual source of truth; **tokens** and **CSS primitives** let any surface (docs, marketing, product) stay on-brand without reinventing layout, type, or color logic.
 
-This page is the **handbook** — who touches what, how to talk about the system, and the shortest paths from **first import** to **production-quality** UI.
+This page is the **handbook** — who touches what, how to talk about the system, and the shortest paths from **first import** to **production-quality** UI. For a **maturity ladder** (npm releases, automated checks, design-tool parity), see **[Elevating](/elevating)**.
 
 ## Who uses what
 

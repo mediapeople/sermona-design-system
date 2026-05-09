@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify token build output
+        run: npm test
+
       - name: Build tokens + docs
         env:
           VITEPRESS_SITE_URL: https://sermonacss.com

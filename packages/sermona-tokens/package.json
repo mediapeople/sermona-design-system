@@ -3,6 +3,23 @@
   "version": "0.1.0",
   "description": "Sermona design tokens — colors, type, space — from Figma",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mediapeople/sermona-design-system.git",
+    "directory": "packages/sermona-tokens"
+  },
+  "bugs": {
+    "url": "https://github.com/mediapeople/sermona-design-system/issues"
+  },
+  "homepage": "https://sermonacss.com",
+  "keywords": [
+    "design-tokens",
+    "css-variables",
+    "design-system",
+    "dark-theme",
+    "sermona"
+  ],
   "main": "./dist/tokens.json",
   "files": [
     "dist"

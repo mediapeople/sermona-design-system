@@ -3,6 +3,26 @@
   "version": "0.1.0",
   "description": "Default VitePress theme for Sermona — tokens, dark shell, layout wrapper",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mediapeople/sermona-design-system.git",
+    "directory": "packages/sermona-vitepress-theme"
+  },
+  "bugs": {
+    "url": "https://github.com/mediapeople/sermona-design-system/issues"
+  },
+  "homepage": "https://sermonacss.com",
+  "keywords": [
+    "vitepress",
+    "vitepress-theme",
+    "design-system",
+    "documentation",
+    "sermona"
+  ],
+  "files": [
+    "src"
+  ],
   "exports": {
     ".": "./src/index.ts",
     "./config": "./src/config.js"
